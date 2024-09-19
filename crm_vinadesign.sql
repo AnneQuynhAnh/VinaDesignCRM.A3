@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 19, 2024 at 12:17 PM
+-- Generation Time: Sep 19, 2024 at 06:12 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -423,7 +423,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`session_id`, `expires`, `data`) VALUES
-('e8muNyIU7Ci7Xnup4zc5ClgZ7-Fo-C7O', 1726824732, '{\"cookie\":{\"originalMaxAge\":86400000,\"expires\":\"2024-09-16T15:57:13.402Z\",\"httpOnly\":true,\"path\":\"/\"},\"userEmail\":\"anne@vinadesign.vn\"}');
+('e8muNyIU7Ci7Xnup4zc5ClgZ7-Fo-C7O', 1726848613, '{\"cookie\":{\"originalMaxAge\":86400000,\"expires\":\"2024-09-16T15:57:13.402Z\",\"httpOnly\":true,\"path\":\"/\"},\"userEmail\":\"anne@vinadesign.vn\"}');
 
 -- --------------------------------------------------------
 
@@ -437,7 +437,7 @@ CREATE TABLE `users` (
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `phone_no` varchar(12) DEFAULT NULL,
-  `position` varchar(255) NOT NULL,
+  `position` varchar(255) DEFAULT NULL,
   `date_joining` date DEFAULT NULL,
   `address` varchar(255) DEFAULT NULL,
   `performance_rating` int(1) DEFAULT 0 COMMENT 'Performance rating from 1 to 5',
