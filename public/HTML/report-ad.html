@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Báo Cáo Thu Nhập</title>
+    <link rel="stylesheet" href="../CSS/report.css" />
+    <link rel="stylesheet" href="../CSS/navbar.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header id="navbar-placeholder"></header>
+    <div class="container">
+      <h1>Bảng Báo Cáo Tổng</h1>
+      <div class="main-content">
+        <div class="left-side">
+          <!-- White container for Doughnut Charts -->
+          <div class="chart-container horizontal-flex">
+            <h2>Báo cáo tuần này</h2>
+            <!-- Total Income Doughnut Chart -->
+            <div class="chart-wrapper">
+              <div class="chart-container">
+                <canvas id="totalIncomeChart" width="200" height="200"></canvas>
+              </div>
+              <!-- Summary for Total Income -->
+              <div class="summary-container">
+                <h3>
+                  Tổng tiền: <span id="summaryTotalIncome">1610.00 VND</span>
+                </h3>
+                <p>Đã thu: <span id="summaryDeposited">1207.50 VND</span></p>
+                <p>Còn nợ: <span id="summaryDebt">402.50 VND</span></p>
+              </div>
+            </div>
+
+            <!-- Orders Summary Doughnut Chart -->
+            <div class="chart-wrapper">
+              <div class="chart-container">
+                <canvas
+                  id="orderSummaryChart"
+                  width="200"
+                  height="200"
+                ></canvas>
+              </div>
+              <!-- Summary for Orders -->
+              <div class="summary-container">
+                <h3>Tổng đơn: <span id="summaryTotalOrders">0</span></h3>
+                <p>Đơn hoàn tất: <span id="summaryCompletedOrders">0</span></p>
+                <p>Đơn bị huỷ: <span id="summaryCancelledOrders">0</span></p>
+                <p>
+                  Đơn chưa cập nhật: <span id="summaryNotUpdatedOrders">0</span>
+                </p>
+                <p>
+                  Đơn đang tiến hành:
+                  <span id="summaryProcessingOrders">0</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="right-side">
+          <!-- White container for Bar Chart -->
+          <div class="bar-chart-container">
+            <canvas
+              id="incomeChart"
+              width="300"
+              height="150"
+              style="
+                display: block;
+                box-sizing: border-box;
+                height: 150px;
+                width: 300px;
+              "
+            ></canvas>
+            <button class="arrow-button" data-state="weeks1and2">
+              Tuần3,4 &gt;
+            </button>
+            <div class="bottom-bar">
+              <div class="status-container">
+                <span class="status-text">Dạng Báo Cáo</span>
+                <button onclick="updateReport('day')">Ngày</button>
+                <button onclick="updateReport('month')">Tháng</button>
+                <button onclick="updateReport('year')">Năm</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Delivery Information -->
+          <div class="delivery-container">
+            <div class="delivery-info">
+              <img
+                src="/Assets/images/deliveryman-03.png"
+                alt="Delivery Image"
+                class="delivery-image"
+              />
+              <div class="delivery-summary">
+                <h3>Tổng đơn hàng:</h3>
+                <p>Đang giao: <span id="inTransitOrders">0</span></p>
+                <p>Đã giao: <span id="deliveredOrders">0</span></p>
+              </div>
+            </div>
+
+            <!-- Evaluating Information -->
+            <div class="evaluation-container">
+              <h3>Tổng quan:</h3>
+              <p>Đánh giá: <span id="averageStars">4 sao</span></p>
+              <p>Tổng post trên MXH: <span id="socialMediaPosts">0</span></p>
+              <p>Tổng post trên Shopee: <span id="shopeePosts">0</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Load scripts after all elements are loaded -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Your custom JavaScript should be loaded before any script that uses its functions -->
+    <script src="../JavaScript/report-ad.js"></script>
+    <script src="../JavaScript/navbar-ad.js"></script>
+  </body>
+</html>

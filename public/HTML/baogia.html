@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tạo Đơn Hàng</title>
+    <link rel="stylesheet" href="../CSS/quotation.css" />
+    <link rel="stylesheet" href="../CSS/navbar.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+
+<body>
+    <header id="navbar-placeholder"></header>
+    <div class="bill-container">
+        <div class="bill">
+            <h1>BẢNG BÁO GIÁ IN</h1>
+            <!-- Bill Information Table -->
+            <table class="bill-info-table" style="border: 1px solid black;">
+                <tbody>
+                    <tr>
+                        <td>Tên KH:</td>
+                        <td>Customer Name</td>
+                        <td>Sđt:</td>
+                        <td>Phone Number</td>
+                        <td rowspan="3" class="note-section"> <!-- Note section spanning 3 rows -->
+                            NV Tu Vân : QUÓC THÁI
+                            <p> SET: 090 1319 365 - 096 4657 365</p>
+                            <p>Mail: innhanh1@inkythuatso.com</p>
+                            365 Lê Quang Dinh, P5, Binh Thanh
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Công Ty:</td>
+                        <td>Company</td>
+                        <td>Mst:</td>
+                        <td>Tax ID</td>
+                    </tr>
+                    <tr>
+                        <td>Địa Chỉ:</td>
+                        <td>Address</td>
+                        <td>Mail:</td>
+                        <td>Email</td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- Table Section -->
+            <table class="bill-table" style="border: 1px solid black; border-top: none;">
+                <thead>
+                    <tr>
+                        <th>Order</th>
+                        <th>Product Name</th>
+                        <th>Width</th>
+                        <th>Height</th>
+                        <th>Number</th>
+                        <th>Price</th>
+                        <th>Final Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Example product row -->
+                    <tr>
+                        <td>1</td>
+                        <td>Product A</td>
+                        <td>10cm</td>
+                        <td>15cm</td>
+                        <td>100</td>
+                        <td>$5</td>
+                        <td>$500</td>
+                    </tr>
+                    <!-- Additional product rows go here -->
+                    <!-- Additional rows for shipping, VAT, etc. -->
+                    <tr>
+                        <td colspan="6" class="text-right">Shipping Fee</td>
+                        <td>$10</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" class="text-right">VAT</td>
+                        <td>$20</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" class="text-right">Total</td>
+                        <td>$530</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" class="text-right">Paid</td>
+                        <td>$200</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" class="text-right">Check</td>
+                        <td>$330</td>
+                    </tr>
+                    <!-- Empty rows for notes -->
+                    <tr>
+                        <td colspan="7" class="text-note">Thời gian có hàng: 7-10 ngày (trừ ngày lễ và chủ nhật)
+                            Nhận hàng : khach tự cho xe đến lấy hoặc nhắn địa chỉ báo thêm phí giao hàng
+                            Thành phẩm in trên từng chất liệu khác nhau se có sự chênh lệch màu sắc khác nhau KH không
+                            so sánh, đối chiéu với bất kỳ màn hình máy tính hoặc điện thoại.
+                            Phương thức thanh toán : KH chuyển khoản cọc 50% , còn lại TT khi in xong và nhận hàng</td>
+                    </tr>
+                    <tr>
+                        <td colspan="7" class="text-note">Lưu ý in Offset : Chỉ kiểm tra chất lượng file in nét là in ,
+                            không có TEST
+                            <p>- Công Nghệ in Offset : là hình thức ghép bài in, để tối ưu giá thành / Có tỷ lệ hên xui
+                                lêch màu (3/10)</p>
+                            <p>- Khách chấp nhận mới đặt in / Không giải quyết bất kỳ khiếu nại về màu sắc</p>
+                            <p>- Tất cả lỗi xuát file sai, in mất nét, mát chữ, cắt mất nội dung / Đêu sẽ đc giải quyết
+                                in lại mới 100% cho khách</p>
+                            - Khách cân nhắc kỹ giữa việc in giá rẻ và in kỹ màu. Nếu khách kỹ màu nhớ báo e gửi thêm
+                            giá in máy KTS nhé (thường là gấp 3-4 lần so với máy Offset)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="text">TRẠNG THÁI ĐƠN HÀNG</div>
+        <div class="buttons">
+            <button id="DangThucHienButton">Đang Thực Hiện</button>
+            <button id="HoanTatButton">Hoàn Tất</button>
+            <button id="BiHuyButton">Bi Huỷ</button>
+        </div>
+    </div>
+    <script src="../JavaScript/quotation.js"></script>
+    <script src="../JavaScript/navbar.js"></script>
+</body>
+
+</html>

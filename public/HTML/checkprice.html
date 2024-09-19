@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kiểm Giá In Ấn</title>
+    <link rel="stylesheet" href="../CSS/checkprice.css" />
+    <link rel="stylesheet" href="../CSS/navbar.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header id="navbar-placeholder"></header>
+    <div class="container">
+      <input type="text" id="searchBar" placeholder="Tìm sản phẩm..." />
+      <div id="suggestions"></div>
+      <div id="productDetails" class="">
+        <div class="modal-content">
+          <span id="productName" class="title">HIFLEX Bạt 3.2dzem</span>
+          <div class="specs">
+            <label for="specifications">Quy Cách:</label>
+            <select id="specifications">
+              <option value="Chừa biên">Chừa biên</option>
+              <option value="Đóng Khoen">Đóng Khoen</option>
+              <option value="Dán nối, Chừa biên">Dán nối, Chừa biên</option>
+              <option value="Dán nối, đóng khoen">Dán nối, đóng khoen</option>
+            </select>
+            <div class="row">
+              <div class="input-group">
+                <label for="length">Chiều dài:</label>
+                <input type="number" id="length" min="0" step="0.01" />
+              </div>
+              <div class="input-group">
+                <label for="width">Chiều rộng:</label>
+                <input type="number" id="width" min="0" step="0.01" />
+              </div>
+            </div>
+            <div class="result-row">
+              Tổng diện tích: <span id="totalSize">0.00</span> m²
+            </div>
+            <div class="row">
+              <div class="result-group">
+                Giá mỗi m²: <span id="pricePerM2">00.00</span> VND
+              </div>
+              <div class="result-group">
+                Vật tư dư: <span id="leftMaterial">0.00</span> VND
+              </div>
+            </div>
+            <div class="row">
+              <div class="result-group">
+                Giá in: <span id="printingMoney">0.00</span> VND
+              </div>
+              <div class="result-group">
+                Giá mỗi đơn vị: <span id="perPieceMoney">0.00</span> VND
+              </div>
+            </div>
+            <div class="input-group">
+              <label for="quantity">Số lượng:</label>
+              <input type="number" id="quantity" min="1" value="1" />
+            </div>
+            <div class="result-row total-money-row">
+              Tổng tiền: <span id="totalMoney">0.00</span> VND
+            </div>
+            <div class="input-group">
+              <label for="note">Ghi chú:</label>
+              <textarea
+                id="note"
+                rows="4"
+                placeholder="Thêm ghi chú..."
+              ></textarea>
+            </div>
+            <button id="addToCartButton" class="button-common">
+              Thêm vào giỏ hàng
+            </button>
+            <div id="cartIcon" class="cart-icon">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cart Popup -->
+      <div id="cartPopup" class="cart-popup printable hidden">
+        <div class="cart-popup-content">
+          <button id="closeCartButton" class="button-common close-button">
+            ✕
+          </button>
+          <h2>Giỏ hàng</h2>
+          <div class="input-group">
+            <label for="customerName">Tên khách hàng:</label>
+            <input
+              type="text"
+              id="customerName"
+              placeholder="Nhập tên khách hàng"
+              style="
+                color: black;
+                border-radius: 8px;
+                border: 1px solid #ccc;
+                padding: 5px;
+              "
+            />
+          </div>
+          <div class="input-group">
+            <label for="customerName">Số điện thoại:</label>
+            <input
+              type="text"
+              id="phoneNo"
+              placeholder="Nhập số điện thoại"
+              style="
+                color: black;
+                border-radius: 8px;
+                border: 1px solid #ccc;
+                padding: 5px;
+              "
+            />
+          </div>
+
+          <ul id="cartItems"></ul>
+          <div class="button-group">
+            <button id="addToCartButtonPopup" class="button-common">
+              Thêm
+            </button>
+            <button id="nextButton" class="button-common">Tiếp</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Finalization Popup -->
+      <div id="finalizationPopup" class="finalization-popup hidden">
+        <div id="finalizationPopupContent" class="finalization-popup-content">
+          <button id="closeFinalizationPopupButton" class="close-button">
+            <i class="fas fa-times"></i>
+          </button>
+          <h2>Kiểm giá</h2>
+          <div id="finalCustomerInfo">
+            <p>Tên khách hàng: <span id="finalCustomerName">N/A</span></p>
+            <p>Số điện thoại: <span id="finalCustomerPhone">N/A</span></p>
+          </div>
+          <div id="finalCartDetails"></div>
+          <button id="printButton" class="print-button">
+            <img src="../Assets/images/printericons-02.png" alt="Print Icon" />
+          </button>
+        </div>
+      </div>
+      <div class="bottom-bar"></div>
+    </div>
+
+    <script src="../JavaScript/checkprice.js"></script>
+    <script src="../JavaScript/navbar.js"></script>
+  </body>
+</html>

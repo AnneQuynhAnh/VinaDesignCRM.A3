@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tạo Đơn Hàng</title>
+    <link rel="stylesheet" href="../CSS/bill.css" />
+    <link rel="stylesheet" href="../CSS/navbar.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+
+<body>
+    <header id="navbar-placeholder"></header>
+    <div class="bill-container">
+        <div class="bill">
+            
+                <div class="logo-container">
+                    <img src="../Assets/images/logo.png" alt="Logo" class="logo">
+                
+                </div>
+            <div class="bill-info">
+                <div class="column">
+                    <p>Đơn Hàng:</p>
+                    <p>Khách Hàng:</p>
+                    <p>Điện Thoại:</p>
+                </div>
+                <div class="column">
+                    <p>Ngày Tạo:</p>
+                    <p>Kinh Doanh:</p>
+                    <p>Thiết Kế:</p>
+                </div>
+            </div>
+            <!-- Table Section -->
+            <table class="bill-table">
+                <thead>
+                    <tr>
+                        <th>Order</th>
+                        <th>Product Name</th>
+                        <th>Width</th>
+                        <th>Height</th>
+                        <th>Number</th>
+                        <th>Price</th>
+                        <th>Final Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Example product row -->
+                    <tr>
+                        <td>1</td>
+                        <td>Product A</td>
+                        <td>10cm</td>
+                        <td>15cm</td>
+                        <td>100</td>
+                        <td>$5</td>
+                        <td>$500</td>
+                    </tr>
+                    <!-- Additional product rows go here -->
+                    <!-- Additional rows for shipping, VAT, etc. -->
+                    <tr>
+                        <td colspan="6" class="text-right">Shipping Fee</td>
+                        <td>$10</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" class="text-right">VAT</td>
+                        <td>$20</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" class="text-right">Total</td>
+                        <td>$530</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" class="text-right">Paid</td>
+                        <td>$200</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" class="text-right">Check</td>
+                        <td>$330</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="signature-section">
+                <div class="signature-box">
+                    <p>Kế Toán</p>
+                    <p>(ký và họ tên)</p>
+                    <div class="bank">
+                        <p class="bank-text">Tài Khoản Ngân Hàng</p>
+                        <p>VCB 0531002468134</p>
+                        <img src="path_to_your_qrcode_image_1.png" alt="Bank QR Code 1" class="qr-code" />
+                    </div>
+                </div>
+                <div class="signature-box">
+                    <p>Thủ Quỹ</p>
+                    <p>(ký và họ tên)</p>
+
+                    <div class="company">
+                        <p>CÔNG TY TNHH IN KỸ THUẬT SỐ</p>
+                        <p>PGD Lê Quang Định, HCM</p>
+                    </div>
+
+                </div>
+                <div class="signature-box">
+                    <p>Người Lập Phiếu</p>
+                    <p>(ký và họ tên)</p>
+                    <div class="bank">
+                        <p class="bank-text">Tài Khoản Ngân Hàng</p>
+                        <p>ACB 1234567890123</p>
+                        <img src="path_to_your_qrcode_image_2.png" alt="Bank QR Code 2" class="qr-code" />
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="note">
+                <p>
+
+                    Lưu Ý:</p>
+                <p>Hàng in xong hoàn tất, không có bao đổi trả hàng
+                    Màu sắc in ấn: Được tư vấn rõ khi đặt in. Không phản ánh màu sắc in ấn theo ý khách hàng
+                    yêu cầu
+                    Phieuinancogiatritrongthingketingaylap
+                    phieu
+                    Cảm ơn quý khách hàng.</p>
+
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="text">TRẠNG THÁI ĐƠN HÀNG</div>
+        <div class="buttons">
+            <button id="DangThucHienButton">Đang Thực Hiện</button>
+            <button id="HoanTatButton">Hoàn Tất</button>
+            <button id="BiHuyButton">Bi Huỷ</button>
+        </div>
+    </div>
+    <script src="../JavaScript/bill.js"></script>
+    <script src="../JavaScript/navbar.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,191 @@
+/* Navbar styling */
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #333333;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 15%; /* Default width for the expanded navbar */
+  height: 100vh;
+  z-index: 1000;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: width 0.3s ease;
+  font-family: "MINIONPRO-BOLD", sans-serif; /* Corrected font-family declaration */
+}
+
+/* Top section: logo and profile */
+.top-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.left img.logo {
+  width: 100%;
+  background: white;
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.profile-button {
+  display: flex;
+  align-items: center;
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 20px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.profile-button img.profile-img {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin-left: auto;
+}
+
+.profile-button:hover,
+.profile-button.active {
+  background-color: #ff4a4a;
+  color: white;
+}
+
+.username {
+  font-size: 14px;
+  color: white;
+}
+
+/* Middle section button styling */
+.middle {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.middle .nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px 0;
+  transition: background 0.3s, color 0.3s;
+  width: 100%;
+}
+
+.middle .nav-btn .icon-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ff4a4a;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.middle .nav-btn .icon-circle img.nav-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.middle .nav-btn:hover,
+.middle .nav-btn.active {
+  background-color: #ff4a4a;
+  color: black;
+}
+
+/* Hide text by default, show when navbar is not collapsed */
+.middle .nav-btn span {
+  display: none;
+}
+
+.navbar:not(.collapsed) .middle .nav-btn span {
+  display: inline; /* Show text when navbar is expanded */
+}
+
+/* Right section styling */
+.right {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.notification-img {
+  height: 35px;
+  width: 35px;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+
+.notifications-container {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  height: auto;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.notifications-container p {
+  font-size: 12px;
+  color: #333333bf;
+}
+
+/* Toggle button styling */
+.toggle-btn {
+  position: absolute;
+  top: 60px;
+  right: -25px; /* Position the arrow slightly outside the navbar */
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.toggle-btn img {
+  width: 35px;
+  height: 35px;
+  transition: transform 0.3s;
+  opacity: 90%;
+}
+
+/* Rotate arrow when navbar is collapsed */
+.navbar.collapsed .toggle-btn img {
+  transform: rotate(180deg);
+}
+
+/* Collapsed navbar styles */
+.navbar.collapsed {
+  width: 70px; /* Collapsed width */
+  transition: width 0.3s ease;
+}
+
+.navbar.collapsed .middle .nav-btn span {
+  display: none; /* Hide text when collapsed */
+}
+
+.navbar.collapsed .profile-button {
+  display: none; /* Hide profile when collapsed */
+}

@@ -1,0 +1,307 @@
+body {
+  background-color: #2a2020;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center the content vertically */
+  margin: 0; /* Reset default margin */
+  padding: 0; /* Reset default padding */
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-image: url("../Assets/images/Wavyline.png");
+  background-size: 150%;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 100;
+  background: rgb(68, 70, 64);
+  background: linear-gradient(
+    204deg,
+    rgba(68, 70, 64, 1) 0%,
+    rgba(37, 35, 35, 1) 17%,
+    rgba(77, 83, 96, 1) 55%,
+    rgba(59, 61, 68, 1) 77%,
+    rgba(66, 66, 61, 1) 96%
+  );
+}
+
+.add-button {
+  position: fixed;
+  right: 60px;
+  bottom: 50px;
+  height: 70px;
+  width: 70px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1001;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: 30px;
+}
+
+.input-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.input-field label {
+  flex: 1;
+  color: black;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.input-field input {
+  flex: 2;
+  padding: 10px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 5px;
+  color: black;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+.bill-photo {
+  width: 200px;
+  height: 200px;
+  background-color: white;
+}
+
+.add-photo {
+  width: 200px;
+  height: 200px;
+}
+
+.button-container {
+  position: absolute;
+  bottom: 20px;
+  right: 90px;
+  display: flex;
+  gap: 10px;
+}
+
+.save-button,
+.cancel-button {
+  height: 30px;
+  width: 60px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  color: white;
+}
+
+.save-button {
+  background-color: #4caf50;
+}
+
+.cancel-button {
+  background-color: #f44336;
+}
+
+.search-bar {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-top: 40px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 8px 30px 8px 40px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  box-sizing: border-box;
+}
+
+.search-bar .search-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-size: 16px;
+}
+
+.search-bar .cross-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  cursor: pointer;
+}
+.search-bar {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-top: 100px; /* Moved down by increasing margin-top */
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 8px 30px 8px 40px;
+  border: 1px solid #0c0c0c;
+  border-radius: 20px;
+  box-sizing: border-box;
+  background-color: #fffffd;
+  color: rgb(9, 9, 9);
+  font-size: 16px;
+}
+
+.search-bar .search-icon,
+.search-bar .cross-icon,
+.search-bar .filter-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: white;
+}
+
+.container {
+  width: 70%;
+  padding: 20px;
+  border-radius: 50px;
+  margin-top: 50px;
+}
+
+.order {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+}
+
+.order .section {
+  padding: 0 10px;
+}
+
+.order .section:not(:first-child) {
+  border-left: 1px solid black;
+}
+
+.order .section p {
+  margin: 1px 0;
+  font-size: 14px;
+}
+
+.order .code {
+  flex: 0.5;
+  text-align: center;
+}
+
+.order .info {
+  flex: 2;
+  display: flex;
+  justify-content: space-around;
+}
+
+.order .charged {
+  flex: 1;
+  text-align: center;
+}
+
+.order .actions {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.order .actions .result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  padding: 2px 5px;
+  background-color: #7ed957;
+  color: black;
+}
+
+.editbtn {
+  margin-left: 10px;
+  height: 40px;
+  width: 40px;
+}
+.photobtn {
+  margin-left: 10px;
+  height: 45px;
+  width: 45px;
+}
+h1 {
+  color: white;
+  font-size: 40px;
+}
+/* Modal overlay styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black background */
+  z-index: 1000; /* Behind the input container */
+  display: none; /* Hidden by default */
+}
+
+/* Input container styling to appear above overlay */
+.input-container {
+  position: fixed;
+  z-index: 1001; /* On top of the modal overlay */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  display: none; /* Hidden by default */
+}
+#uploaded-photo-container {
+  display: none; /* Initially hidden */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff; /* Ensure white background */
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 1001;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for a polished look */
+}
+
+#uploaded-bill-photo {
+  max-width: 300px;
+  max-height: 300px;
+  display: block;
+  background-color: transparent; /* Make sure image has no background */
+  margin: auto; /* Centers the image horizontally */
+}

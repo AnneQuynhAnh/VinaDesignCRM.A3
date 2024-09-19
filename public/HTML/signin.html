@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Correct the path to the CSS file -->
+    <link rel="stylesheet" href="../CSS/homepage-signin.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In - VINA Design</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Correct the path to the logo image -->
+      <img
+        src="../Assets/images/logo.png"
+        alt="VINA Design Logo"
+        class="logo"
+      />
+      <h1>Đăng Nhập</h1>
+      <div class="shape circle"></div>
+      <div class="shape square"></div>
+      <form id="signinForm" action="javascript:void(0);" method="post">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required /><br /><br />
+
+        <label for="password">Mật khẩu</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+        /><br /><br />
+
+        <!-- Role Selection on the Same Line -->
+        <div class="role-selection">
+          <label>Chọn vai trò:</label>
+          <input type="radio" id="admin" name="role" value="admin" required />
+          <label for="admin">Quản trị</label>
+          <input type="radio" id="employee" name="role" value="employee" />
+          <label for="employee">Nhân viên</label>
+        </div>
+        <br />
+
+        <button type="submit">Tiếp</button>
+      </form>
+
+      <div class="line-art">
+        <div class="line line-1"></div>
+        <div class="line line-2"></div>
+        <div class="line line-3"></div>
+      </div>
+
+      <!-- Correct the paths to other pages -->
+      <p><a href="forgot-password.html">Quên Mật Khẩu?</a></p>
+      <p><a href="signup.html">Đăng kí</a></p>
+    </div>
+    <!-- Correct the path to the JavaScript file -->
+    <script src="../JavaScript/sign-in.js"></script>
+  </body>
+</html>

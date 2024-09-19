@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VINA Design Dashboard</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../CSS/navbar.css" />
+  </head>
+  <body>
+    <div class="navbar" id="navbar">
+      <div class="top-section">
+        <div class="profile-button" onclick="location.href='profile.html'">
+          <img
+            src="../Assets/images/profile.png"
+            alt="Profile Image"
+            class="profile-img"
+          />
+          <span class="username" id="username">Username</span>
+        </div>
+      </div>
+      <div class="middle">
+        <button onclick="location.href='home.html'" class="nav-btn">
+          <img
+            src="../Assets/images/homeicon.png"
+            alt="Home Icon"
+            class="nav-icon"
+          />
+          <span>Home</span>
+        </button>
+        <button onclick="redirectToUserReport()" class="nav-btn">
+          <img
+            src="../Assets/images/form.png"
+            alt="Report Icon"
+            class="nav-icon"
+          />
+          <span>Báo Cáo</span>
+        </button>
+        <button onclick="location.href='create-order.html'" class="nav-btn">
+          <img
+            src="../Assets/images/plus.png"
+            alt="Create Order Icon"
+            class="nav-icon"
+          />
+          <span>Tạo đơn</span>
+        </button>
+        <button onclick="location.href='search.html'" class="nav-btn">
+          <img
+            src="../Assets/images/search.png"
+            alt="Search Icon"
+            class="nav-icon"
+          />
+          <span>Tìm kiếm</span>
+        </button>
+        <button onclick="location.href='checkprice.html'" class="nav-btn">
+          <img
+            src="../Assets/images/check.png"
+            alt="Check Price Icon"
+            class="nav-icon"
+          />
+          <span>Kiểm giá</span>
+        </button>
+      </div>
+    </div>
+    <script src="../JS/navbar.js"></script>
+    <script>
+      function redirectToUserReport() {
+        const userName = localStorage.getItem("username") || "Default User";
+        const encodedUserName = encodeURIComponent(userName);
+        const reportUrl = `/HTML/report.html?name=${encodedUserName}`;
+        location.href = reportUrl;
+      }
+      localStorage.setItem("username", "Anne Truong");
+    </script>
+  </body>
+</html>

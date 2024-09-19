@@ -1,0 +1,145 @@
+body,
+html {
+    font-family: url(Assets/font/MINIONPRO-BOLD.OTF);
+    background-color: #2a2020;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-image: url("../Assets/images/Wavyline.png");
+    background-size: 150%;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+.bill-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.bill {
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 80%;
+    text-align: center;
+    transform: scale(0.8);
+    transform-origin: center center;
+    margin: auto;
+}
+
+.bill h1 {
+    color: red;
+}
+
+.bill-info-table {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.8em;
+}
+
+.bill-info-table td {
+    padding: 4px 8px;
+    border: 1px solid black;
+}
+
+.bill-info-table tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+
+.note-section{
+    text-align: center;
+    line-height: 0.2; /* Adjust the line height to reduce space between lines */
+  
+}
+.bill-table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+.bill-table th,
+.bill-table td {
+    padding: 4px 8px;
+    border: 1px solid black;
+}
+
+.bill-table th {
+    background-color: #f4f4f4;
+}
+
+.bill-table td {
+    background-color: #fdfdfd;
+}
+
+.text-right {
+    text-align: right;
+}
+.text-note {
+    text-align: left;
+   
+}
+.bill-table td.text-note {
+    padding: 10px; /* Apply padding to the table cell containing the text-note */
+    line-height: 15px;
+}
+
+
+
+.footer {
+    background-color: #333;
+    color: black;
+    display: flex;
+    align-items: center;
+    padding: 6px 10px;
+    border-top: 1px solid black;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer .text {
+    font-size: 12px;
+    margin-right: 10px;
+    color: white;
+}
+
+.footer .buttons {
+    margin-left: 40px;
+    display: flex;
+    gap: 15px;
+}
+
+.footer .buttons button {
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 12px;
+    padding: 6px 10px;
+    cursor: pointer;
+    transition: background 0.5s ease;
+}
+
+.footer .buttons button:hover {
+    opacity: 0.8;
+}

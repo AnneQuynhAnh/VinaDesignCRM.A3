@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order History</title>
+    <link rel="stylesheet" href="../CSS/navbar.css" />
+    <link rel="stylesheet" href="../CSS/search.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header id="navbar-placeholder"></header>
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="Tìm Kiếm Đơn Hàng" />
+      <span class="filter-icon">⚙️</span>
+      <div class="filter-dropdown">
+        <label>
+          <input type="radio" name="filter" value="order_id" checked />
+          Mã Đơn Hàng
+        </label>
+        <label>
+          <input type="radio" name="filter" value="customer_name" />
+          Tên Khách Hàng
+        </label>
+        <label>
+          <input type="radio" name="filter" value="phone_no" />
+          Số điện thoại
+        </label>
+        <label>
+          <input type="radio" name="filter" value="product_details" />
+          Sản phẩm
+        </label>
+      </div>
+      <div id="suggestions" class="suggestions-box"></div>
+    </div>
+
+    <div class="container">
+      <!-- Orders will be dynamically inserted here by JavaScript -->
+    </div>
+
+    <!-- Billing Modal -->
+    <div id="billingModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="billing-section">
+          <div class="column full-details">
+            <p>Số đơn hàng: <input type="text" id="orderNo" readonly /></p>
+            <p>Tên nhân viên: <input type="text" id="staffName" /></p>
+            <p>Thiết kế: <input type="text" id="designer" /></p>
+            <p>
+              Tên khách hàng: <input type="text" id="billingCustomerName" />
+            </p>
+            <p>Số điện thoại: <input type="text" id="phoneNo" /></p>
+          </div>
+
+          <div class="column">
+            <div id="paymentSection">
+              <p>Thanh toán:</p>
+              <input
+                type="radio"
+                id="paymentCash"
+                name="paymentMethod"
+                value="cash"
+              />
+              <label for="paymentCash">Tiền mặt</label>
+              <input
+                type="radio"
+                id="paymentTransaction"
+                name="paymentMethod"
+                value="transaction"
+              />
+              <label for="paymentTransaction">Chuyển khoản</label>
+
+              <!-- New VAT Invoice Number Section -->
+              <div id="vatInvoiceSection" style="margin-top: 10px">
+                <p>
+                  Mã đơn VAT:
+                  <input
+                    type="text"
+                    id="vatInvoiceNumber"
+                    placeholder="Nhập mã đơn VAT"
+                    style="color: black"
+                    <!--
+                    Make
+                    sure
+                    the
+                    text
+                    inside
+                    the
+                    input
+                    is
+                    visible
+                    --
+                  />
+                  />
+                </p>
+              </div>
+
+              <div id="cashDetails" class="hidden">
+                <p>Thời gian: <input type="date" id="timeTransaction" /></p>
+                <p>
+                  Tiền đặt cọc: <input type="number" id="depositedAmountCash" />
+                </p>
+              </div>
+
+              <div id="transactionDetails" class="hidden">
+                <p>
+                  Tên ngân hàng: <input type="text" id="bankNameTransaction" />
+                </p>
+                <p>Thời gian: <input type="date" id="timeTransaction2" /></p>
+                <p>
+                  Tiền đặt cọc:
+                  <input type="number" id="depositedAmountTransaction" />
+                </p>
+              </div>
+            </div>
+
+            >
+          </div>
+
+          <div class="column full-details">
+            <p>
+              <img
+                src="../Assets/images/QR invoice.png"
+                alt="QR Code"
+                class="qr-code"
+              />
+            </p>
+            <p>Chi tiết hóa đơn VAT</p>
+            <div id="finalProductDetails"></div>
+            <p>Ghi chú: <input type="text" id="noteDetails" /></p>
+            <p>Ngày nhận: <input type="text" id="receivedDay" /></p>
+            <p>Giảm giá: <input type="number" id="discount" value="0" /></p>
+            <p>Số tiền khách cần trả: <span id="amountToPay">0</span> VND</p>
+          </div>
+
+          <!-- Specific ID for edit update button -->
+          <button id="editUpdateButton" class="update-btn">Update</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="../JavaScript/navbar.js"></script>
+    <script src="../JavaScript/search.js"></script>
+  </body>
+</html>

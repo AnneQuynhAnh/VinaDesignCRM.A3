@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../CSS/profile.css" />
+    <link rel="stylesheet" href="../CSS/navbar.css" />
+    <!-- Corrected path -->
+    <title>Profile Page</title>
+  </head>
+  <body>
+    <header id="navbar-placeholder"></header>
+    <div class="form-container">
+      <div class="form-row">
+        <div class="form-column">
+          <div class="profile-container">
+            <div
+              class="profile-image"
+              onclick="document.getElementById('file-input').click();"
+            >
+              <img
+                src="../Assets/images/profile.png"
+                alt="Profile Image"
+                id="profile-img"
+              />
+              <!-- Corrected path -->
+              <input
+                type="file"
+                id="file-input"
+                accept="image/*"
+                onchange="loadFile(event)"
+              />
+            </div>
+            <div class="profile-name" id="profile-name">
+              STAFF NAME
+              <img src="../Assets/images/editpic.png" <!-- Corrected path -- />
+              alt="Edit" class="pen-icon" onclick="toggleEdit(this)" />
+            </div>
+          </div>
+          <input type="text" placeholder="Gmail" id="email-input" />
+          <input type="text" placeholder="Số điện thoại" id="phone-input" />
+          <input
+            type="password"
+            placeholder="Mật Khẩu Cũ"
+            id="current-password-input"
+          />
+        </div>
+        <div class="form-column second-column">
+          <input
+            type="text"
+            placeholder="Mật khẩu mới"
+            id="new-password-input"
+          />
+          <input
+            type="password"
+            placeholder=" Xác nhận mật khẩu mới"
+            id="confirm-password-input"
+          />
+          <button class="update-button" onclick="updateProfile()">
+            Update Details
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="signout-container">
+      <button class="signout-button" onclick="location.href='signin.html'">
+        Đăng Xuất
+      </button>
+    </div>
+    <script src="../JavaScript/profile.js"></script>
+    <script src="../JavaScript/navbar.js"></script>
+  </body>
+</html>

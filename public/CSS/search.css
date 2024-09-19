@@ -1,0 +1,516 @@
+body {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 100;
+
+  color: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-size: 150%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background: rgb(68, 70, 64);
+  background: linear-gradient(
+    204deg,
+    rgba(68, 70, 64, 1) 0%,
+    rgba(37, 35, 35, 1) 17%,
+    rgba(77, 83, 96, 1) 55%,
+    rgba(59, 61, 68, 1) 77%,
+    rgba(66, 66, 61, 1) 96%
+  );
+}
+h1 {
+  position: absolute;
+  top: 0;
+  left: 8%;
+  padding: 10px;
+  font-size: 40px;
+  color: white;
+}
+
+.search-bar {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-top: 100px; /* Moved down by increasing margin-top */
+  border-radius: 8px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 8px 30px 8px 40px;
+  box-sizing: border-box;
+  background-color: #fffffd;
+  color: rgb(9, 9, 9);
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.search-bar .filter-icon {
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.filter-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 10px;
+  background-color: #ff6e6e;
+  border-radius: 5px;
+  padding: 10px;
+  display: none;
+}
+
+.filter-dropdown label {
+  display: block;
+  margin-bottom: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.container {
+  width: 80%;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+.order {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  color: rgb(10, 10, 10);
+  border: 1px solid rgb(10, 10, 10);
+  padding: 15px;
+  border-radius: 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.order .section {
+  padding: 0 10px;
+}
+
+.order .section:not(:first-child) {
+  border-left: 1px solid rgb(0, 0, 0);
+}
+
+.order .section p {
+  margin: 2px 0;
+  font-size: 16px;
+}
+
+.order .code {
+  flex: 0.5;
+  text-align: center;
+}
+
+.order .info {
+  flex: 2;
+  display: flex;
+  justify-content: space-around;
+  color: black;
+}
+
+.order .charged {
+  flex: 1;
+  text-align: center;
+}
+
+.order .actions {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.order .actions .result button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  padding: 5px 10px;
+  background-color: rgb(255, 116, 116);
+  color: black;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.order .actions .result button.completed {
+  background-color: green;
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+}
+
+.suggestions-box {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  max-height: 200px;
+  overflow-y: auto;
+  width: 100%;
+  z-index: 10000;
+  display: none;
+  margin-top: 10px; /* Adjust this value to move the suggestions box down */
+}
+
+.icon-btn {
+  width: 40px; /* Set a fixed width for the icons */
+  height: 40px; /* Set a fixed height for the icons */
+  margin: 0 5px; /* Add some margin between icons */
+  cursor: pointer;
+}
+
+.status-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px; /* Adjust padding for equal size */
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100px; /* Set a fixed width for equal size */
+  text-align: center;
+}
+
+.status-btn:hover {
+  background-color: #45a049;
+}
+
+.section.actions {
+  display: flex;
+  justify-content: space-between; /* Space the icons and button evenly */
+  align-items: center;
+}
+
+.result {
+  flex-grow: 1; /* Let the status button grow to fill space */
+  display: flex;
+  justify-content: center; /* Center the button */
+}
+
+.icon-btn {
+  height: 40px; /* Set the desired height */
+  width: auto; /* Allow width to adjust to maintain aspect ratio */
+  margin: 0 5px; /* Margin between icons */
+  cursor: pointer;
+}
+
+.status-btn {
+  flex-shrink: 0; /* Prevent buttons from shrinking */
+}
+
+/* Modal styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  color: #000;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Billing Section */
+.billing-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Adjust spacing between columns */
+  padding: 20px;
+  position: relative;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.column {
+  flex: 1; /* Make columns flexible */
+  padding: 10px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Spacing between elements in the column */
+}
+
+.column p {
+  margin: 10px 0;
+}
+
+.column input[type="text"],
+.column input[type="number"],
+.column select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.column label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.hidden {
+  display: none;
+}
+
+.qr-code {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 15px;
+}
+
+.billing-section .column input[type="radio"] {
+  margin-right: 10px;
+}
+
+.billing-section .column label[for="paymentCash"],
+.billing-section .column label[for="paymentTransaction"],
+.billing-section .column label[for="deliveryPickup"],
+.billing-section .column label[for="deliveryDelivery"] {
+  margin-right: 15px;
+}
+
+#cashDetails,
+#transactionDetails,
+#pickupDetails,
+#deliveryDetails {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+}
+
+#finalProductDetails {
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+}
+.order .info {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 10px;
+  color: rgb(2, 2, 2);
+  padding: 10px;
+}
+
+.order .info .column {
+  background-color: transparent; /* Set column background to transparent */
+}
+.update-btn {
+  background-color: #d73c21; /* Green background */
+  color: white; /* White text */
+  border: none;
+  padding: 10px 20px; /* Padding for the button */
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 20px; /* Position it at the bottom */
+  right: 20px; /* Position it at the right */
+}
+
+.update-btn:hover {
+  background-color: #4caf50; /* Darker green on hover */
+}
+
+/* Modal content styles */
+.modal-content {
+  position: relative;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  width: 500px; /* Adjust the width as needed */
+}
+
+/* Style for the close button */
+.close {
+  position: absolute;
+  top: 10px; /* Position at the top */
+  right: 10px; /* Position at the right */
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #5a5a5a; /* Red color for visibility */
+}
+/* Popup Styles */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px;
+  text-align: center;
+}
+
+.popup .close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+.status-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 20px;
+  z-index: 1000;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  width: 250px; /* Adjust width as needed */
+  border-radius: 8px; /* Optional rounded corners */
+  position: relative; /* Ensure absolute positioning for the close button */
+}
+
+.status-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 20px;
+  z-index: 1000;
+  width: 300px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.status-popup-content {
+  text-align: center;
+}
+
+.status-popup button {
+  margin: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+/* Style for the "X" close button */
+.status-popup .close-popup {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  color: #333; /* Change color as needed */
+}
+
+.status-popup button {
+  margin: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+/* Popup container styling */
+.status-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  z-index: 1000;
+  width: 300px; /* Adjust width as needed */
+  text-align: center;
+}
+
+/* Popup content styling */
+.status-popup-content h2 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Status button styling */
+.status-option {
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin: 5px; /* Adds some spacing between buttons */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  width: calc(100% - 10px); /* Ensures buttons take full width with spacing */
+}
+
+/* Different background colors for each status button */
+.status-option[data-status="Hoàn Tất"] {
+  background-color: #4caf50;
+}
+
+.status-option[data-status="Đang thực hiện"] {
+  background-color: #f39c12;
+}
+
+.status-option[data-status="Đã huỷ"] {
+  background-color: #e74c3c;
+}
+
+/* Hover effect for buttons */
+.status-option:hover {
+  opacity: 0.8; /* Slight opacity change on hover */
+}
